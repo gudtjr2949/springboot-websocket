@@ -10,7 +10,6 @@ import org.springframework.data.redis.connection.MessageListener;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
-
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -29,9 +28,6 @@ public class RedisSubscribeListener implements MessageListener {
 
             log.info("Redis Subscribe Channel : " + messageDto.getRoomId());
             log.info("Redis SUB Message : {}", publishMessage);
-
-            // Return || Another Method Call(etc.save to DB)
-            // TODO
         } catch (JsonProcessingException e) {
             log.error(e.getMessage());
         }

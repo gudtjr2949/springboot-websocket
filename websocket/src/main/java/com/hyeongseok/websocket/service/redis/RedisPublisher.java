@@ -14,7 +14,6 @@ public class RedisPublisher {
         this.template = template;
     }
 
-
     /**
      * Object publish
      */
