@@ -54,7 +54,6 @@
         console.log('Connected: ' + frame);
 
         stompClient.subscribe('/topic/greetings/' + ${chatroomId}, (greeting) => {
-            console.log("Send Message!!");
             showGreeting(JSON.parse(greeting.body).content);
         });
     };

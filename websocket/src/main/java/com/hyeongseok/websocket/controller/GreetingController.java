@@ -23,11 +23,9 @@ public class GreetingController {
     @MessageMapping("/hello/{chatroomId}")
     @SendTo("/topic/greetings/{chatroomId}")
     public Greeting greeting(@DestinationVariable String chatroomId, HelloMessage message) throws Exception {
-        Thread.sleep(1000); // simulated delay
-
         // 전처리를 거쳐도 됨. DB, Redis 저장 등등
 
-        return new Greeting(" " + HtmlUtils.htmlEscape(message.getName()) + "!");
+        return new Greeting(" " + HtmlUtils.htmlEscape(message.getName()));
     }
 
     @GetMapping("/main/{memberId}")
